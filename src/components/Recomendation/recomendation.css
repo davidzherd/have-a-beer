@@ -1,0 +1,17 @@
+.twoColumns {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.beerInfo {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  padding: 20px;
+}
+.beerLogo {
+  height: 300px;
+}
+.bold {
+  font-weight: bold;
+}
