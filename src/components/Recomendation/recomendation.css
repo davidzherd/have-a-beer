@@ -1,3 +1,9 @@
+body {
+  --primary: #ffecd6;
+  --secondery: #c8ae7d;
+  --accent: #765827;
+  --secondery-accent: #65451f;
+}
 .twoColumns {
   display: flex;
   justify-content: space-around;
@@ -8,10 +14,12 @@
   align-items: start;
   flex-direction: column;
   padding: 20px;
+  text-align: start;
 }
 .beerLogo {
   height: 300px;
 }
 .bold {
   font-weight: bold;
+  color: var(--secondery-accent);
 }

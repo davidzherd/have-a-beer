@@ -1,10 +1,12 @@
 .App {
   --primary: #ffecd6;
-  --secondery: #C8AE7D;
+  --secondery: #c8ae7d;
   --accent: #765827;
-  --secondery-accent: #65451F;
+  --secondery-accent: #65451f;
   text-align: center;
   background-color: var(--primary);
   width: 100%;
   height: 100vh;
+  font-family: Century;
+  color: var(--accent);
 }

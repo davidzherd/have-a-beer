@@ -14,26 +14,33 @@ function Recomendation() {
     fetchData();
   }, []);
   console.log(beerData);
-
-  return (
-    <div className="twoColumns">
-      <img src={beerData.image_url} alt={beerData.name} className="beerLogo" />
-      <div className="beerInfo">
-        <p>
-          <span className="bold">Name: </span>
-          {beerData.name}
-        </p>
-        <p>
-          <span className="bold">PH: </span>
-          {beerData.ph}
-        </p>
-        <p>
-          <span className="bold">Description: </span>
-          {beerData.description}
-        </p>
+  if (beerData) {
+    return (
+      <div className="twoColumns">
+        <img
+          src={beerData.image_url}
+          alt={beerData.name}
+          className="beerLogo"
+        />
+        <div className="beerInfo">
+          <p>
+            <span className="bold">Name: </span>
+            {beerData.name}
+          </p>
+          <p>
+            <span className="bold">PH: </span>
+            {beerData.ph}
+          </p>
+          <p>
+            <span className="bold">Description: </span>
+            {beerData.description}
+          </p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <div></div>;
+  }
 }
 
 export default Recomendation;
