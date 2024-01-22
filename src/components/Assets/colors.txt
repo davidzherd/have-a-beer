@@ -1,0 +1,4 @@
+primary: #EAC696
+secondery: #C8AE7D
+Accent: #765827
+Secondery accent: #65451F
