@@ -1,33 +1,36 @@
-*{
-    --primary: #ffecd6;
-    --secondery: #C8AE7D;
-    --accent: #765827;
-    --secondery-accent: #65451F;
+* {
+  --primary: #ffecd6;
+  --secondery: #c8ae7d;
+  --accent: #765827;
+  --secondery-accent: #65451f;
 }
-.main-navigation{
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--secondery);
-    padding: 5px;
-    box-shadow: var(--secondery-accent) 3px 0px 5px;
+.main-navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondery);
+  padding: 5px;
+  box-shadow: var(--secondery-accent) 3px 0px 5px;
 }
-.logo{
-    height: 5rem;
+.logo {
+  height: 5rem;
 }
-.navigation-list{
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.navigation-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.navigation-list li{
-    margin-right: 1rem;
-    font-family: Century;
-    cursor: pointer;
-    color: var(--secondery-accent);
-    transition: text-shadow 0.3s;
-    font-size: 1.3rem;
+.navigation-list li {
+  margin-right: 1rem;
+  font-family: Century;
+  cursor: pointer;
+  color: var(--secondery-accent);
+  transition: text-shadow 0.3s;
+  font-size: 1.3rem;
 }
-li:hover{
-    text-shadow: var(--accent) 1px 0px 3px;
+li:hover {
+  text-shadow: var(--accent) 1px 0px 3px;
 }
