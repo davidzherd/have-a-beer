@@ -1,7 +1,7 @@
 import React from "react";
-
+import Navbar from "../../components/Navbar/Navbar";
 const FindABeer = () => {
-  return <div>Hello world</div>;
+  return <div></div>;
 };
 
 export default FindABeer;

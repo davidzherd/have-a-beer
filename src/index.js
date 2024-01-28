@@ -5,11 +5,13 @@ import Home from "./pages/Home/Home";
 import reportWebVitals from "./reportWebVitals";
 import FindABeer from "./pages/FindABeer/FindABeer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
 
 export default function App() {
   return (
     <React.StrictMode>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="home" element={<Home />}></Route>
