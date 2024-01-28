@@ -34,3 +34,9 @@
 li:hover {
   text-shadow: var(--accent) 1px 0px 3px;
 }
+.remove-link-colors {
+  text-decoration: none;
+}
+.remove-link-colors:visited {
+  color: var(--secondery-accent);
+}
