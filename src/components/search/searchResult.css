@@ -21,7 +21,7 @@
   transition: all 0.3s;
 }
 .result:hover {
-  box-shadow: inset var(--secondery-accent) 0px 0px 3px;
+  box-shadow: inset var(--secondery-accent) 0px 0px 50px 10px;
 }
 .poster {
   max-height: 4rem;
