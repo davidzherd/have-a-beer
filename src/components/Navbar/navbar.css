@@ -13,6 +13,7 @@
   background-color: var(--secondery);
   padding: 5px;
   box-shadow: var(--secondery-accent) 3px 0px 5px;
+  z-index: 100;
 }
 .logo {
   height: 5rem;

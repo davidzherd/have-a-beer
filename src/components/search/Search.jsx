@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./search.css";
+import SearchResult from "./SearchResult";
 
 const Search = ({ props }) => {
   let resultsArray = [];
-  const [searchResults, setSearchResults] = useState(null);
+  const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
     console.log(searchResults);
   }, [searchResults]);
@@ -20,6 +21,7 @@ const Search = ({ props }) => {
     const searchInput = document.querySelector(".search-input");
     let searchTerm = searchInput.value;
     fetchData(searchTerm);
+    searchInput.value = "";
   };
   return (
     <div>
@@ -35,9 +37,9 @@ const Search = ({ props }) => {
         </button>
       </div>
       <div className="results">
-        <table>
-          <tbody>{resultsArray}</tbody>
-        </table>
+        {searchResults.map((result) => (
+          <SearchResult result={result} />
+        ))}
       </div>
     </div>
   );

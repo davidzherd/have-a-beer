@@ -1,0 +1,35 @@
+* {
+  outline: none;
+  --primary: #ffecd6;
+  --secondery: #c8ae7d;
+  --accent: #765827;
+  --secondery-accent: #65451f;
+}
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.result {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+  background-color: rgba(118, 88, 39, 0.1);
+  width: 100%;
+  transition: all 0.3s;
+}
+.result:hover {
+  box-shadow: inset var(--secondery-accent) 0px 0px 3px;
+}
+.poster {
+  max-height: 4rem;
+  cursor: pointer;
+  margin: 10px 20px 10px 10px;
+}
+.beer-name {
+  font-size: 1rem;
+  color: var(--secondery-accent);
+  cursor: pointer;
+}
