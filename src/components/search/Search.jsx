@@ -5,9 +5,6 @@ import SearchResult from "./SearchResult";
 const Search = ({ props }) => {
   let resultsArray = [];
   const [searchResults, setSearchResults] = useState([]);
-  useEffect(() => {
-    console.log(searchResults);
-  }, [searchResults]);
   async function fetchData(searchTerm) {
     const apiUrl = `https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`;
     const response = await fetch(apiUrl);
@@ -37,9 +34,9 @@ const Search = ({ props }) => {
         </button>
       </div>
       <div className="results">
-        {searchResults.map((result) => (
-          <SearchResult result={result} />
-        ))}
+        {searchResults.length !== 0
+          ? searchResults.map((result) => <SearchResult result={result} />)
+          : `No results found for your search!`}
       </div>
     </div>
   );
