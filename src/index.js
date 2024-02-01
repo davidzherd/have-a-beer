@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import FindABeer from "./pages/FindABeer/FindABeer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import ContactUs from "./pages/ContactUs/ContactUs";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="home" element={<Home />}></Route>
           <Route path="findabeer" element={<FindABeer />}></Route>
+          <Route path="contact" element={<ContactUs />}></Route>
         </Routes>
       </BrowserRouter>
     </React.StrictMode>

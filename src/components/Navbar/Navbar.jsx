@@ -18,7 +18,11 @@ const Navbar = () => {
               Find a Beer
             </Link>
           </li>
-          <li>Contact Us</li>
+          <li>
+            <Link to="contact" className="remove-link-colors">
+              Contact Us
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

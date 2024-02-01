@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
 import "./findabeer.css";
 import Search from "../../components/search/Search";
 
