@@ -35,7 +35,9 @@ const Search = ({ props }) => {
       </div>
       <div className="results">
         {searchResults.length !== 0
-          ? searchResults.map((result) => <SearchResult result={result} />)
+          ? searchResults.map((result) => (
+              <SearchResult result={result} key={result.id} />
+            ))
           : `No results found for your search!`}
       </div>
     </div>

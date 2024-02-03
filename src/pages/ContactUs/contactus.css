@@ -51,7 +51,7 @@ textarea {
   box-shadow: inset var(--secondery-accent) 0px 0px 5px 1px;
   letter-spacing: 1px;
 }
-p {
+.error {
   margin: none;
   color: red;
   display: none;

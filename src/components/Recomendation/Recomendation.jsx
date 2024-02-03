@@ -24,6 +24,7 @@ function Recomendation() {
   };
   useEffect(() => {
     fetchData();
+    console.log(beerData);
   }, []);
   useEffect(() => {
     if (beerData !== null) {
