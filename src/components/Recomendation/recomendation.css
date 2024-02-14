@@ -4,9 +4,12 @@ body {
   --accent: #765827;
   --secondery-accent: #65451f;
 }
-@media (width< 768px) {
+@media (width < 768px) {
   .twoColumns {
     flex-direction: column;
+  }
+  .beerInfo {
+    max-width: 80%;
   }
 }
 .twoColumns {
@@ -28,7 +31,7 @@ body {
   text-align: start;
   box-shadow: var(--secondery-accent) 1px 0px 5px;
   border-radius: 5px;
-  max-width: 50%;
+  /* max-width: 50%; */
 }
 .beerLogo {
   display: flex;

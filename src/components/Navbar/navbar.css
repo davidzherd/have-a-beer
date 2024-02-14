@@ -41,3 +41,9 @@ li:hover {
 .remove-link-colors:visited {
   color: var(--secondery-accent);
 }
+@media (width <768px) {
+  .navigation-list li {
+    font-size: 1rem;
+    margin-right: 0.2rem;
+  }
+}

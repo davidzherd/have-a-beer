@@ -1,23 +1,17 @@
 .modal {
   position: fixed;
-  top: 100px;
-  left: 25svw;
-  width: 50svw;
-  height: 50dvh;
+  width: 100svw;
+  height: 100dvh;
+  left: 0;
+  top: 90px;
   background-color: var(--primary);
   box-shadow: 0px 5px 10px var(--secondery);
   display: flex;
   align-items: start;
   justify-content: start;
   flex-direction: column;
-}
-@media (max-width: 1200px) {
-  .modal {
-    width: 100svw;
-    height: 100dvh;
-    left: 0;
-    top: 90px;
-  }
+  transition: all 0.3s ease-in-out;
+  overflow-y: scroll;
 }
 .closeModal {
   position: absolute;
@@ -36,6 +30,7 @@
   padding: 20px;
   align-items: start;
   flex-wrap: wrap;
+  text-align: start;
 }
 .justify-center {
   justify-self: center;
@@ -44,5 +39,5 @@
 .background {
   position: absolute;
   height: 100%;
-  opacity: 0.2;
+  opacity: 0.15;
 }

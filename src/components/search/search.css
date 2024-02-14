@@ -43,3 +43,8 @@
 .errorMessage {
   font-weight: bold;
 }
+@media (width < 768px) {
+  .search-input {
+    width: 15rem;
+  }
+}

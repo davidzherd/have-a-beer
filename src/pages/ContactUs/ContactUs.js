@@ -1,73 +1,85 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./contactus.css";
+import MessageModal from "../../components/MessageModal/MessageModal";
 
 const ContactUs = () => {
   const [modal, setModal] = useState(false);
-  const [data, setData] = useState({ name: "", email: "", message: "" });
-  const formValidation = (event) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const saveForm = (event) => {
     event.preventDefault();
-    setData({
-      name: `${event.target.name.value}`,
-      email: `${event.target.email.value}`,
-      message: `${event.target.message.value}`,
-    });
+    setModal(true);
+    console.log(
+      event.target[0].value,
+      event.target[1].value,
+      event.target[2].value
+    );
   };
-
-  useEffect(
-    (e) => {
-      const nameError = document.getElementById("nameError");
-      const emailError = document.getElementById("emailError");
-      const messageError = document.getElementById("messageError");
-      if (data.name === "") {
-        nameError.style.display = "flex";
-      } else {
-        nameError.style.display = "none";
-      }
-      if (data.email === "") {
-        emailError.style.display = "flex";
-      } else {
-        emailError.style.display = "none";
-      }
-      if (data.message === "") {
-        messageError.style.display = "flex";
-      } else {
-        messageError.style.display = "none";
-      }
-      if (data.name !== "" && data.email !== "" && data.message !== "") {
-        console.log(data);
-        const name = document.getElementById("name");
-        const email = document.getElementById("email");
-        const message = document.getElementById("message");
-        name.value = "";
-        email.value = "";
-        message.value = "";
-      }
-    },
-    [data]
-  );
   return (
     <div className="align-center">
       <h1>Contact Us</h1>
-      <form id="contactus" className="contact-form" onSubmit={formValidation}>
+      <form id="contactus" className="contact-form" onSubmit={saveForm}>
         <label htmlFor="name">Full Name:</label>
-        <input className="input" id="name" name="name" type="text" />
-        <p className="error" id="nameError">
-          Please fill in your name.
-        </p>
+        <input
+          className="input"
+          id="name"
+          name="name"
+          type="text"
+          required
+          onChange={(event) => setName(event.target.value)}
+        />
+        {name === "" ? (
+          <p className="error" id="nameError">
+            Please fill in your name.
+          </p>
+        ) : (
+          ""
+        )}
+
         <label htmlFor="email">Email Address:</label>
-        <input className="input" id="email" name="email" type="email" />
-        <p className="error" id="emailError">
-          Please fill in your email.
-        </p>
+        <input
+          className="input"
+          id="email"
+          name="email"
+          type="email"
+          required
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        {email === "" ? (
+          <p className="error" id="emailError">
+            Please fill in your email.
+          </p>
+        ) : (
+          ""
+        )}
         <label htmlFor="message">Your message:</label>
-        <textarea id="message" name="message" />
-        <p className="error" id="messageError">
-          Please fill in your message.
-        </p>
+        <textarea
+          id="message"
+          name="message"
+          required
+          onChange={(event) => setMessage(event.target.value)}
+        />
+        {message === "" ? (
+          <p className="error" id="messageError">
+            Please fill in your message.
+          </p>
+        ) : (
+          ""
+        )}
+
         <button className="send" type="submit">
           Send
         </button>
       </form>
+      {modal && (
+        <MessageModal
+          name={name}
+          email={email}
+          message={message}
+          setState={setModal}
+        />
+      )}
     </div>
   );
 };

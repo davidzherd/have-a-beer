@@ -3,34 +3,15 @@ import "./recomendation.css";
 
 function Recomendation() {
   const [beerData, setBeerData] = useState(null);
-  const [foodPairings, setFoodPairings] = useState("");
   async function fetchData() {
     const apiUrl = "https://api.punkapi.com/v2/beers/random";
     const response = await fetch(apiUrl);
     const randomBeerObject = await response.json();
     setBeerData(randomBeerObject[0]);
   }
-  const foodPairing = (arrayOfFoods) => {
-    let finalString = "";
-    const lastIndex = arrayOfFoods.length;
-    for (let index = 0; index < lastIndex; index++) {
-      if (index < lastIndex - 1) {
-        finalString = finalString + `${arrayOfFoods[index]}, `;
-      } else {
-        finalString = finalString + `${arrayOfFoods[index]}.`;
-      }
-    }
-    setFoodPairings(finalString);
-  };
   useEffect(() => {
     fetchData();
   }, []);
-  useEffect(() => {
-    if (beerData !== null) {
-      foodPairing(beerData.food_pairing);
-    }
-  }, [beerData]);
-
   if (beerData) {
     return (
       <>
@@ -55,7 +36,7 @@ function Recomendation() {
               {beerData.description ? beerData.description : "Not specified"}
             </p>
             <p>
-              <span className="bold">PH: </span>
+              <span className="bold">pH (Potential of Hydrogen) </span>
               {beerData.ph ? beerData.ph : "Not specified"}
             </p>
             <p>
@@ -80,7 +61,9 @@ function Recomendation() {
             </p>
             <p>
               <span className="bold">We recommand to drink it with: </span>
-              {foodPairings ? foodPairings : "Not specified"}
+              {beerData.food_pairing
+                ? beerData.food_pairing.join(", ")
+                : "Not Specified"}
             </p>
           </div>
         </div>

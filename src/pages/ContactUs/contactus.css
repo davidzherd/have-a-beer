@@ -54,7 +54,6 @@ textarea {
 .error {
   margin: none;
   color: red;
-  display: none;
 }
 .send {
   background-color: transparent;
