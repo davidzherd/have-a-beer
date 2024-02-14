@@ -44,6 +44,6 @@ li:hover {
 @media (width <768px) {
   .navigation-list li {
     font-size: 1rem;
-    margin-right: 0.2rem;
+    margin-right: 0.5rem;
   }
 }
