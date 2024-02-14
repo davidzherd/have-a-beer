@@ -1,0 +1,48 @@
+.modal {
+  position: fixed;
+  top: 100px;
+  left: 25svw;
+  width: 50svw;
+  height: 50dvh;
+  background-color: var(--primary);
+  box-shadow: 0px 5px 10px var(--secondery);
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+}
+@media (max-width: 1200px) {
+  .modal {
+    width: 100svw;
+    height: 100dvh;
+    left: 0;
+    top: 90px;
+  }
+}
+.closeModal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.modal-title {
+  align-self: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.modal-beer-details {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: start;
+  flex-wrap: wrap;
+}
+.justify-center {
+  justify-self: center;
+  align-self: center;
+}
+.background {
+  position: absolute;
+  height: 100%;
+  opacity: 0.2;
+}

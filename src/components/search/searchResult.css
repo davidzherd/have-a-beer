@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
 }
-.result {
+.details {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -20,7 +20,7 @@
   width: 100%;
   transition: all 0.3s;
 }
-.result:hover {
+.details:hover {
   box-shadow: inset var(--secondery-accent) 0px 0px 50px 10px;
 }
 .poster {

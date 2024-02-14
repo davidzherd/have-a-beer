@@ -1,24 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./search.css";
 import SearchResult from "./SearchResult";
 
 const Search = ({ props }) => {
   let resultsArray = [];
   const [searchResults, setSearchResults] = useState([]);
+  const [errorMessage, setErrorMessage] = useState(
+    <p className="errorMessage"></p>
+  );
   async function fetchData(searchTerm) {
     const apiUrl = `https://api.punkapi.com/v2/beers?beer_name=${searchTerm}`;
     const response = await fetch(apiUrl);
     const results = await response.json();
-    setSearchResults(results);
-    for (let result in searchResults) {
-      resultsArray.push(result);
+    if (results.length !== 0) {
+      setSearchResults(results);
+      for (let result in searchResults) {
+        resultsArray.push(result);
+      }
+    } else {
+      setSearchResults([]);
+      setErrorMessage(
+        <p className="errorMessage">No results found for: {searchTerm}</p>
+      );
     }
   }
   const runSearch = () => {
     const searchInput = document.querySelector(".search-input");
-    let searchTerm = searchInput.value;
-    fetchData(searchTerm);
-    searchInput.value = "";
+    if (searchInput.value !== "") {
+      fetchData(searchInput.value);
+      searchInput.value = "";
+    } else {
+      setSearchResults([]);
+      setErrorMessage(
+        <p className="errorMessage">
+          You have to type somthing in the search box!
+        </p>
+      );
+    }
   };
   return (
     <div>
@@ -28,6 +46,11 @@ const Search = ({ props }) => {
           className="search-input"
           id="search"
           placeholder={props.placeholder}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              runSearch();
+            }
+          }}
         />
         <button className="search-btn" onClick={runSearch}>
           Search
@@ -38,7 +61,7 @@ const Search = ({ props }) => {
           ? searchResults.map((result) => (
               <SearchResult result={result} key={result.id} />
             ))
-          : `No results found for your search!`}
+          : errorMessage}
       </div>
     </div>
   );

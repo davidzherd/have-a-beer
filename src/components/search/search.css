@@ -40,3 +40,6 @@
   gap: 10px;
   overflow-x: hidden;
 }
+.errorMessage {
+  font-weight: bold;
+}

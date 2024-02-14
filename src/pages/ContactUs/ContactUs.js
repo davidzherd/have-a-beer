@@ -3,9 +3,7 @@ import "./contactus.css";
 
 const ContactUs = () => {
   const [modal, setModal] = useState(false);
-  const [nameError, setNameError] = useState(false);
   const [data, setData] = useState({ name: "", email: "", message: "" });
-
   const formValidation = (event) => {
     event.preventDefault();
     setData({
@@ -14,6 +12,7 @@ const ContactUs = () => {
       message: `${event.target.message.value}`,
     });
   };
+
   useEffect(
     (e) => {
       const nameError = document.getElementById("nameError");

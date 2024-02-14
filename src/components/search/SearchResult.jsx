@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import BeerDetails from "../BearDetails/BeerDetails";
 import "./searchResult.css";
-function SearchResult(props) {
-  const result = props.result;
+function SearchResult({ result }) {
+  const [detailsOpen, setDetailsOpen] = useState(false);
+  function openDetails() {
+    setDetailsOpen(!detailsOpen);
+  }
   return (
-    <div className="result">
-      <img src={result.image_url} alt={result.name} className="poster" />
-      <p className="beer-name">{result.name}</p>
-    </div>
+    <>
+      <div className="details" onClick={openDetails}>
+        <img src={result.image_url} alt={result.name} className="poster" />
+        <p className="beer-name">{result.name}</p>
+      </div>
+      {detailsOpen && <BeerDetails beer={result} setState={openDetails} />}
+    </>
   );
 }
 
