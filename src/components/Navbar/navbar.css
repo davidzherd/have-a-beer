@@ -41,6 +41,15 @@ li:hover {
 .remove-link-colors:visited {
   color: var(--secondery-accent);
 }
+.remove-link-colors,
+.remove-link-colors:link,
+.remove-link-colors:visited,
+.remove-link-colors:hover,
+.remove-link-colors:focus,
+.remove-link-colors:active {
+  color: inherit;
+  text-decoration: none;
+}
 @media (width <768px) {
   .navigation-list li {
     font-size: 1rem;
