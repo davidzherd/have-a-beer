@@ -14,10 +14,10 @@ export default function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="home" element={<Home />}></Route>
-          <Route path="findabeer" element={<FindABeer />}></Route>
-          <Route path="contact" element={<ContactUs />}></Route>
+          <Route path="have-a-beer/" element={<Home />}></Route>
+          <Route path="have-a-beer/home" element={<Home />}></Route>
+          <Route path="have-a-beer/findabeer" element={<FindABeer />}></Route>
+          <Route path="have-a-beer/contact" element={<ContactUs />}></Route>
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
